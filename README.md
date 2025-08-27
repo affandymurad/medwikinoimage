@@ -2,7 +2,7 @@
 
 # medwikinoimage
 
-medwikinoimage is a Node.js tool for analyzing wiki markup source code. It reads wiki markup from `input.txt`, checks each MedWiki article link, and automatically identifies articles that **do not** contain images. The results are written to a numbered output file (e.g., `output1.txt`, `output2.txt`, etc.) in the same directory.
+medwikinoimage is a Node.js tool for analyzing wiki markup source code from https://mdwiki.org/wiki/Main_Page. It reads wiki markup from `input.txt`, checks each MedWiki article link, and automatically identifies articles that **do not** contain images. The results are written to a numbered output file (e.g., `output1.txt`, `output2.txt`, etc.) in the same directory.
 
 ## Features
 
