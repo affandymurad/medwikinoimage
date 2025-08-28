@@ -86,7 +86,7 @@ async function getWikitext(title) {
     });
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), 15000); // 15 seconds
 
     try {
         const response = await fetch(`${API_URL}?${params}`, { signal: controller.signal });
