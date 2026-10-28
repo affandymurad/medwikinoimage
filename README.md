@@ -2,6 +2,16 @@
 
 # medwikinoimage
 
+> ## ⚠️ Deprecated: this project has moved
+>
+> This repository is **no longer maintained**. MedWiki No Image is now a web tool that runs directly in your browser (no Node.js needed), with a "Get Complete List" button, PDF export, dark mode, and English/Indonesian:
+>
+> **👉 https://affandymurad.github.io/medwikinoimage**
+>
+> *Proyek ini sudah **deprecated** dan tidak dipelihara lagi. Silakan pakai versi web di tautan di atas.*
+
+The notes below describe the old Node.js command-line version, kept for reference only.
+
 medwikinoimage is a Node.js tool for analyzing wiki markup source code from https://mdwiki.org/wiki/Main_Page. It reads wiki markup from `input.txt`, checks each MedWiki article link, and automatically identifies articles that **do not** contain images. The results are written to a numbered output file (e.g., `output1.txt`, `output2.txt`, etc.) in the same directory.
 
 Google Docs result sample = https://docs.google.com/document/d/1V1m1ehXtt0AYOMw7iCulfR8Di9Vdw7QvXqz-xM6H7o4/edit?usp=sharing
@@ -14,7 +24,7 @@ Google Docs result sample = https://docs.google.com/document/d/1V1m1ehXtt0AYOMw7
 
 ## Prerequisites
 
-- Node.js v16 or higher
+- Node.js v24 or higher
 - npm
 
 ## Installation
