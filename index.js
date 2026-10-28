@@ -1,8 +1,6 @@
 // index.js
 
 import fs from 'fs';
-import AbortController from 'abort-controller';
-import fetch from 'node-fetch';
 
 const API_URL = "https://mdwiki.org/w/api.php";
 const INPUT_FILE = "input.txt";
@@ -85,12 +83,8 @@ async function getWikitext(title) {
         titles: title
     });
 
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000); // 15 seconds
-
     try {
-        const response = await fetch(`${API_URL}?${params}`, { signal: controller.signal });
-        clearTimeout(timeout);
+        const response = await fetch(`${API_URL}?${params}`, { signal: AbortSignal.timeout(10000) }); // 10 seconds
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         const pages = data.query.pages;
@@ -107,8 +101,7 @@ async function getWikitext(title) {
         }
         return null;
     } catch (error) {
-        clearTimeout(timeout);
-        if (error.name === 'AbortError') return 'TIMEOUT';
+        if (error.name === 'TimeoutError' || error.name === 'AbortError') return 'TIMEOUT';
         console.error(`Error fetching "${title}": ${error.message}`);
         return null;
     }

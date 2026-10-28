@@ -10,8 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "abort-controller": "^3.0.0",
-    "node-fetch": "^3.3.2"
+  "engines": {
+    "node": ">=24"
   }
 }
